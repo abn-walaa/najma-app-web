@@ -10,4 +10,7 @@ app.get('/*', serveStatic({
 }))
 app.get('/', serveStatic({ path: "/static/index.html" }))
 
-export default app
+export default {
+  fetch: app.fetch,
+  port: 3600
+}
