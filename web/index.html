@@ -38,6 +38,12 @@
 <body>
   <base href="/admin" --base-href="/admin">
   <script src="/admin/flutter_bootstrap.js" async></script>
+
+  <script>
+    document.addEventListener('load', () => {
+      document.querySelector("body > flutter-view > flt-glass-pane").shadowRoot.querySelectorAll("flt-scene-host > flt-scene > flt-transform > flt-offset:nth-child(3) > flt-offset > flt-offset > flt-picture > flt-canvas > div > div > div").forEach(e => { e.style.height = "8000px" })
+    })
+  </script>
 </body>
 
 </html>
