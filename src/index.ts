@@ -10,12 +10,19 @@ app.get('/*', serveStatic({
 }))
 app.get('/admin/*', serveStatic({
   root: "/web/", rewriteRequestPath: p => {
-    console.log(p, " ss2ssss-sssssss")
+
     return p.replace(/^\/admin/, '')
+  }
+}))
+app.get('/tajer*', serveStatic({
+  root: "/tajer", rewriteRequestPath: p => {
+
+    return p.replace(/^\/tajer/, '')
   }
 }))
 app.get('/', serveStatic({ path: "/static/index.html" }))
 app.get('/admin', serveStatic({ path: "/web/index.html" }))
+app.get('/tajer*', serveStatic({ path: "/tajer/index.html" }))
 
 
 
